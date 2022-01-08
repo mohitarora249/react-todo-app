@@ -4,17 +4,17 @@ import "@testing-library/jest-dom";
 import AddTodo from "../AddTodo";
 
 describe("AddTodo", () => {
-  test("ok btn is rendered", () => {
+  test("should render ok btn", () => {
     render(<AddTodo />);
     expect(screen.getByTestId("add_todo_ok_btn")).toBeInTheDocument();
   });
 
-  test("cancel btn is rendered", () => {
+  test("should render cancel btn", () => {
     render(<AddTodo />);
     expect(screen.getByTestId("add_todo_cancel_btn")).toBeInTheDocument();
   });
 
-  test("input element is rendered for adding new todo", () => {
+  test("should render input element for adding new todo", () => {
     render(<AddTodo />);
     expect(screen.getByTestId("todo_title")).toBeInTheDocument();
   });
