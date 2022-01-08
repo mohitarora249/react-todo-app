@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function AddTodo({ closeBtnHdlr, addTodoBtnHdlr }) {
-  const [title, seTtitle] = useState("");
+  const [title, setTtitle] = useState("");
 
   const handleAddTodo = (e) => {
     e.preventDefault();
@@ -9,7 +9,10 @@ function AddTodo({ closeBtnHdlr, addTodoBtnHdlr }) {
   };
 
   return (
-    <div class="bg-slate-800 bg-opacity-50 flex justify-center items-center absolute top-0 right-0 bottom-0 left-0">
+    <div
+      data-testid="add_todo_popup"
+      class="bg-slate-800 bg-opacity-50 flex justify-center items-center absolute top-0 right-0 bottom-0 left-0"
+    >
       <div class="bg-white px-16 py-10 rounded-md text-center relative">
         <form
           class="bg-white rounded px-8 pt-6 pb-8 mb-4"
@@ -25,16 +28,18 @@ function AddTodo({ closeBtnHdlr, addTodoBtnHdlr }) {
             <input
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="title"
+              data-testid="todo_title"
               type="text"
               placeholder="Enter Todo"
               value={title}
-              onChange={(e) => seTtitle(e.target.value)}
+              onChange={(e) => setTtitle(e.target.value)}
             />
           </div>
           <span className="bottom-4 absolute">
             <button
               className="border px-4 py-2 rounded-md text-md text-gray-400"
               onClick={closeBtnHdlr}
+              data-testid="add_todo_cancel_btn"
             >
               Cancel
             </button>
@@ -46,6 +51,7 @@ function AddTodo({ closeBtnHdlr, addTodoBtnHdlr }) {
               }`}
               disabled={!title}
               type="submit"
+              data-testid="add_todo_ok_btn"
             >
               Ok
             </button>
