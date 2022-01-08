@@ -1,6 +1,6 @@
 function TodoList({ todos, deleteTodoHdlr, toggleTodo }) {
   return (
-    <ul className="w-64">
+    <ul className="w-64" data-testid="todo_list">
       {todos.map((todo, idx) => (
         <li
           className={`p-4 my-2 w-full rounded-md border-2 shadow-lg cursor-pointer flex justify-between items-center ${

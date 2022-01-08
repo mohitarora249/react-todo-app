@@ -1,8 +1,7 @@
 import React from "react";
-import { render, fireEvent, waitFor, screen } from "@testing-library/react";
+import { render, fireEvent, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import AddTodo from "../AddTodo";
-import App from "../../App";
 
 test("ok btn is rendered", () => {
   render(<AddTodo />);
