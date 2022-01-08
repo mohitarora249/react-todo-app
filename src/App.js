@@ -5,13 +5,12 @@ function App() {
   const [todos, setTodos] = useState([
     {
       id: 1,
-      title: "Sample",
+      title: "Buy Bread",
       isComplete: true,
     },
     {
       id: 2,
-      title:
-        "Sample 1 Sample 1 Sample 1 Sample 1 Sample 1 Sample 1 Sample 1 Sample 1 Sample 1 Sample 1 Sample 1",
+      title: "Pay Mobile Bill",
       isComplete: false,
     },
   ]);
