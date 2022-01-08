@@ -3,23 +3,20 @@ import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import App from "../App";
 
-test("app title rendered", () => {
+test("should render toods list title", () => {
   render(<App />);
-  expect(screen.getByTestId("todo_title")).toHaveTextContent("TODOS LIST");
+  expect(
+    screen.getByRole("heading", { name: /todos list/i })
+  ).toBeInTheDocument();
 });
 
-test("add todo btn rendered", () => {
+test("should render add todo btn", () => {
   render(<App />);
-  expect(screen.getByTestId("add_todo_btn")).toBeInTheDocument();
+  expect(screen.getByRole("button", { name: "Add Todo" })).toBeInTheDocument();
 });
 
-test("add todo btn text is correct", () => {
+test("should open add todo popup", () => {
   render(<App />);
-  expect(screen.getByTestId("add_todo_btn")).toHaveTextContent("Add Todo");
-});
-
-test("add todo btn click renders add todo popup", () => {
-  render(<App />);
-  fireEvent.click(screen.getByTestId("add_todo_btn"));
+  fireEvent.click(screen.getByRole("button", { name: "Add Todo" }));
   expect(screen.getByTestId("add_todo_popup")).toBeInTheDocument();
 });

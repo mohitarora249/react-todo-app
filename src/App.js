@@ -39,21 +39,15 @@ function App() {
 
   return (
     <div className="h-screen flex flex-col items-center w-2/6 mx-auto">
-      <h1
-        data-testid="todo_title"
-        class="text-xl mb-4 font-bold text-slate-500 my-4"
-      >
-        TODOS LIST
-      </h1>
+      <h1 className="text-xl mb-4 font-bold text-slate-500 my-4">TODOS LIST</h1>
       <TodoList
         deleteTodoHdlr={deleteTodoHdlr}
         toggleTodo={toggleTodo}
         todos={todos}
       />
       <button
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         onClick={toggleAddTodoBtnHdlr}
-        data-testid="add_todo_btn"
       >
         Add Todo
       </button>
