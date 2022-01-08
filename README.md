@@ -1,5 +1,7 @@
 # TODO APP
 
+## [<u>Live Demo</u>](https://eager-aryabhata-e582f8.netlify.app/)
+
 ### This app allows you to create todo list
 
 ## Available Scripts
