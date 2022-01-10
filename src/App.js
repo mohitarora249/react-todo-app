@@ -4,12 +4,12 @@ import TodoList from "./components/TodoList";
 function App() {
   const [todos, setTodos] = useState([
     {
-      id: 1,
+      id: "todo-0",
       title: "Buy Bread",
       isComplete: true,
     },
     {
-      id: 2,
+      id: "todo-1",
       title: "Pay Mobile Bill",
       isComplete: false,
     },
@@ -27,7 +27,7 @@ function App() {
   };
   const addTodoBtnHdlr = (title) => {
     const copy = [...todos];
-    copy.push({ id: copy.length, title, isComplete: false });
+    copy.push({ id: `todo-${copy.length}`, title, isComplete: false });
     setTodos(copy);
     toggleAddTodoBtnHdlr(false);
   };
